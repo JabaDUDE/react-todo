@@ -1,24 +1,44 @@
 import { useState } from 'react'
 import './App.css'
+//TODO: work on creating separate component for the list
+// import ToDoList from './ToDoList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [todos, setTodos] = useState([])
+  const [newTodo, setNewTodo] = useState('')
 
-  function handleClick() {
-    setCount((count) => count + 1)
+  // const listItems = todos.map(function(todo){
+  //   <ToDoList item={todo} />
+  // })
+
+  const addTodo = () => {
+    if(newTodo.trim() !== ''){
+      setTodos([...todos, newTodo])
+      setNewTodo('')
+    }
+  }
+  // '_' in the filter function is a placeholder since it's not actually beingused to update the todos
+  const deleteTodo = (index) => {
+    const updatedTodos = todos.filter((_, i) => i !== index)
+    setTodos(updatedTodos)
   }
 
   return (
     <>
       <h1>It Do Be Likie That Sometimes</h1>
       <div>
-        <input type='text' placeholder='Add Task Here' />
-        <button>Add</button>
+        <input type='text' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder='Add Task Here' />
+        <button onClick={addTodo}>Add</button>
       </div>
-      <div>
-        <h1>You pressed this button {count} times</h1>
-        <button onClick={handleClick}>Press</button>
-      </div>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <span onClick={() => deleteTodo(index)}>🗑️</span>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
