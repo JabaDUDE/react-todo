@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-//TODO: work on creating separate component for the list
-// import ToDoList from './ToDoList'
+import ToDoList from './ToDoList'
+import UserInput from './UserInput'
 
 function App() {
   
@@ -28,21 +28,13 @@ function App() {
 
   return (
     <>
-      <h1>It Do Be Likie That Sometimes</h1>
+      <h1 className="font-bold text-red-700">To Do List</h1>
       <div>
-        <input type='text' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder='Add Task Here' />
-        <button onClick={addTodo}>Add</button>
+        <UserInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo} />
       </div>
-      <ul>
       <div>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <span onClick={() => deleteTodo(index)}>🗑️</span>
-          </li>
-        ))}
-        </div>
-      </ul>
+        <ToDoList todos={todos} deleteTodo={deleteTodo} />
+      </div>
     </>
   )
 }
