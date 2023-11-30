@@ -27,15 +27,17 @@ function App() {
   }
 
   return (
-    <>
-      <h1 className="font-bold text-red-700">To Do List</h1>
+    <div className="flex flex-col justify-center max-w-7xl">
+    <div className="flex justify-center">
+      <h1 className="font-bold tracking-wide text-5xl m-1.5">To Do List</h1>
+    </div>
       <div>
         <UserInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo} />
       </div>
       <div>
         <ToDoList todos={todos} deleteTodo={deleteTodo} />
       </div>
-    </>
+    </div>
   )
 }
 
