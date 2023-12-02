@@ -36,9 +36,9 @@ function App() {
       <div>
         <UserInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo} />
       </div>
-      <div>
+      <div className="max-w-6xl">
         <ToDoList todos={todos} deleteTodo={deleteTodo} completedTodo={completedTodo} />
-      </div>
+        </div>
     </div>
   )
 }
