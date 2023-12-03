@@ -6,15 +6,17 @@ import UserInput from './UserInput'
 function App() {
   
   const [todos, setTodos] = useState([])
-  const [createTodo, setCreateTodo] = useState({})
   const [newTodo, setNewTodo] = useState('')
 
   //initial state of newToDo is an empty string, so this function checks to make sure it's not just an empty string after trimming white space from both sides of input, then updates todos when the user hits the Add button. The newToDo is the 'e.target.value' of the input.
   const addTodo = () => {
+    let id = todos.length + 1
     if(newTodo.trim() !== ''){
-      setCreateTodo({task: newTodo, completed: false})
-      setTodos([...todos, createTodo])
-      console.log(createTodo);
+      setTodos((oldTodos) => [...oldTodos, {
+        id: id,
+        task: newTodo,
+        completed: false
+      }])
       setNewTodo('')
     }
   }
