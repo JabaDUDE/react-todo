@@ -5,7 +5,7 @@ export default function ToDoList({ todos, deleteTodo, completedTodo }){
         {todos.map((todo, index) => (
           <li key={index} className="flex m-auto justify-between">
             <div>
-              <h3 className="font-bold align-middle">{todo}</h3>
+              <h3 className="font-bold align-middle">{todo.task}</h3>
             </div>
             <div className="m-2 flex items-center space-x-1.5">
               <span onClick={() => completedTodo(index)} 

@@ -6,15 +6,22 @@ import UserInput from './UserInput'
 function App() {
   
   const [todos, setTodos] = useState([])
+  const [createTodo, setCreateTodo] = useState({})
   const [newTodo, setNewTodo] = useState('')
 
   //initial state of newToDo is an empty string, so this function checks to make sure it's not just an empty string after trimming white space from both sides of input, then updates todos when the user hits the Add button. The newToDo is the 'e.target.value' of the input.
   const addTodo = () => {
     if(newTodo.trim() !== ''){
-      setTodos([...todos, newTodo])
+      setCreateTodo({task: newTodo, completed: false})
+      setTodos([...todos, createTodo])
+      console.log(createTodo);
       setNewTodo('')
     }
   }
+  // if(newTodo.trim() !== ''){
+  //   setTodos([...todos, newTodo])
+  //   setNewTodo('')
+  // }
   // '_' in the filter function is a placeholder since it's not actually beingused to update the todos
   //function takes the index of the todo that is being 'deleted' and creates an updated todo list
   const deleteTodo = (index) => {
