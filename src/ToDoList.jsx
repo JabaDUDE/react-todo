@@ -8,7 +8,7 @@ export default function ToDoList({ todos, deleteTodo, completedTodo }){
               <h3 className="font-bold align-middle">{todo.task}</h3>
             </div>
             <div className="m-2 flex items-center space-x-1.5">
-              <span onClick={() => completedTodo(todo.id)} 
+              <span onClick={() => completedTodo()} 
                 className="cursor-pointer">✔️</span>
               <span onClick={() => deleteTodo(todo.id)} 
                 className="cursor-pointer">🗑️</span>

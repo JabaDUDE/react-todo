@@ -32,20 +32,19 @@ function App() {
   }
 
   //This function should move the todo that is marked 'completed' to a separate list to be grayed out.
-  //TODO: complete this function
-  const completedTodo= (id) => {
-    //grab the task that is being 'completed'
+  
+  const completedTodo= () => {
+    //grab the task that is being 'completed' (the filter will always only grab one task and put it in an array)
     const updatedTodos = todos.filter((task, i) => i + 1 == task.id)
+    const completedTodo = {
+        id: updatedTodos[0].id,
+        task: updatedTodos[0].task,
+        completed: true
+    }
     // //add task to completedtodo usestate with updated completed boolean of true
-    // setCompletedtodos((oldList) => {
-    //   return oldList.map((task) => {
-    //     //set todo with ids
-    //     return task.id == id ? {...task, completed: !task.completed} : task
-    //   })
-    // })
-    console.log(completedtodos);
+    setCompletedtodos((oldList) => [...oldList, completedTodo])
   }
-
+  
   return (
     <div className="flex flex-col justify-center m-auto max-w-7xl">
     <div className="flex justify-center">
