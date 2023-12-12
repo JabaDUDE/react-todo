@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import ToDoList from './ToDoList'
 import UserInput from './UserInput'
+import CompletedList from './CompletedList'
 
 function App() {
   
@@ -13,7 +14,7 @@ function App() {
 
   //initial state of newToDo is an empty string, so this function checks to make sure it's not just an empty string after trimming white space from both sides of input, then updates todos when the user hits the Add button. The newToDo is the 'e.target.value' of the input.
   const addTodo = () => {
-    let id = todos.length + 1
+    let id = Math.floor(Math.random() * 1000)
     if(newTodo.trim() !== ''){
       setTodos((oldTodos) => [...oldTodos, {
         id: id,
@@ -22,26 +23,30 @@ function App() {
       }])
       setNewTodo('')
     }
+    console.log(todos);
   }
 
-  // '_' in the filter function is a placeholder since it's not actually beingused to update the todos
-  //function takes the index of the todo that is being 'deleted' and creates an updated todo list
+
+  //function takes the id of the todo that is being 'deleted' and creates an updated todo list
   const deleteTodo = (id) => {
-    const updatedTodos = todos.filter((_, i) => i !== id)
+    const updatedTodos = todos.filter((el) => el.id !== id)
     setTodos(updatedTodos)
   }
 
   //This function should move the todo that is marked 'completed' to a separate list to be grayed out.
   
-  const completedTodo= () => {
-    //grab the task that is being 'completed' (the filter will always only grab one task and put it in an array)
-    const updatedTodos = todos.filter((task, i) => i + 1 == task.id)
+  const completedTodo= (id) => {
+  
+    deleteTodo(id)
+
+    const updatedTodos = todos.filter((el) => el.id == id)
+    //change completed boolean to true
     const completedTodo = {
         id: updatedTodos[0].id,
         task: updatedTodos[0].task,
         completed: true
     }
-    // //add task to completedtodo usestate with updated completed boolean of true
+    console.log(completedtodos, completedTodo, id);
     setCompletedtodos((oldList) => [...oldList, completedTodo])
   }
   
@@ -55,8 +60,7 @@ function App() {
       </div>
       <div className="max-w-6xl">
         <ToDoList todos={todos} deleteTodo={deleteTodo} completedTodo={completedTodo}/>
-        <h3>Completed Tasks</h3>
-
+      <CompletedList completedtodos={completedtodos} />
         </div>
 
     </div>
