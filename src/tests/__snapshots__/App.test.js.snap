@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<div
+  className="flex flex-col justify-center m-auto max-w-7xl"
+>
+  <div
+    className="flex justify-center"
+  >
+    <h1
+      className="font-bold tracking-wide text-5xl m-1.5"
+    >
+      To Do List
+    </h1>
+  </div>
+  <div>
+    <div
+      className="flex flex-col justify-center m-2"
+    >
+      <input
+        className="mb-3 border-black border-solid rounded-lg p-2"
+        onChange={[Function]}
+        placeholder="Add Task Here"
+        type="text"
+        value=""
+      />
+      <button
+        className="font-bold leading-8 cursor-pointer rounded-sm bg-stone-300 hover:bg-stone-700 hover:text-white"
+        onClick={[Function]}
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <div
+    className="max-w-6xl"
+  >
+    <ul
+      className="list-none max-w-full"
+    />
+    <h3>
+      Completed Tasks
+    </h3>
+    <ul
+      className="list-none"
+    />
+  </div>
+</div>
+`;
