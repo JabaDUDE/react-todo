@@ -35,7 +35,7 @@ function App() {
 
   //This function should move the todo that is marked 'completed' to a separate list to be grayed out.
   
-  const completedTodo= (id) => {
+  export const completedTodo= (id) => {
   
     deleteTodo(id)
 

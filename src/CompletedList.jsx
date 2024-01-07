@@ -4,7 +4,7 @@ export default function CompletedList({ completedtodos }){
         <>
             <h3>Completed Tasks</h3>
             <ul className="list-none">
-             {completedtodos.map((todo) => (
+             {!completedtodos ? <li>"You're all caught up!"</li> : completedtodos.map((todo) => (
                  <li key={todo.id} >
                      <h3>{todo.task}</h3>
                 </li>
