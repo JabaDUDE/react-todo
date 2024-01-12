@@ -23,7 +23,6 @@ function App() {
       }])
       setNewTodo('')
     }
-    console.log(todos);
   }
 
 
@@ -59,9 +58,8 @@ function App() {
       </div>
       <div className="max-w-6xl">
         <ToDoList todos={todos} deleteTodo={deleteTodo} completedTodo={completedTodo}/>
-      <CompletedList completedtodos={completedtodos} />
+        <CompletedList completedtodos={completedtodos} />
         </div>
-
     </div>
   )
 }
