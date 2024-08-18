@@ -1,24 +1,15 @@
 # My Awesome Project
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+A simple to-do list that can be marked completed or completely deleted.
 
 **Link to project:** https://react-todo-five-opal.vercel.app
 
-
-
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, ReactJS, Vite, Tailwindcss
-
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
-
-## Optimizations
-*(optional)*
-
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+**Tech used:** HTML, CSS, JavaScript, ReactJS, Vite, TailwindCSS
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *wow I actually did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+This was a new kind of to-do project for me. Not only did I do it in ReactJS, but I was able to give it some more functionality than some older attempts at doing a to-do app. The user can delete the task completely, or they can mark it as completed and it gets moved to the completed list down below. This was huge for me because I was able to not only change state but move it around to a different location. At some point, I would like to add a little more functionality of using local storage and then deleting completed tasks after the day is finished. This may require rebuilding this project from task.
 
 ## Examples:
 Take a look at these couple examples that I have in my own portfolio:
@@ -26,3 +17,5 @@ Take a look at these couple examples that I have in my own portfolio:
 **Personal Site:** https://github.com/JabaDUDE/react-personal
 
 **Blackjack:** https://github.com/JabaDUDE/blackjack-site
+
+**Random Quote Generator:** https://github.com/JabaDUDE/react-quote-generator
